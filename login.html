@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile-navigation Menu</title>
+    <link rel="stylesheet" href="nav.css">
+    <script src="https://kit.fontawesome.com/b764904b73.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="login-page">
+        <div class="items">
+            <img src="mountain1.png">
+            <h1>log in</h1>
+        </div>
+        <form>
+        <div class="input-group">
+            <input type="text" required>
+            <i class="fa-solid fa-user"></i>
+            <span class="bar"></span>
+            <label>Username</label>
+          </div>
+          <!--second input-->
+          <div class="input-group">
+            <input type="password" required>
+            <i class="fa-solid fa-lock"></i>
+            <span class="bar"></span>
+            <label>Password</label>
+          </div>
+          <div class="rem">
+          <input type="checkbox" required><p>Remember me</p>
+        </div>
+          <!--Buttton start-->
+          <button type="submit">log in</button>
+        </form>
+    </div>
+</body>
+</html>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh;
+    
+}
+.login-page{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(#6f72ff,#bb28ff);
+    width:350px;
+    height:450px;
+    border-radius: 10px;
+}
+.login-page .items{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top:25px;
+}
+.items img{
+    width:80px;
+    border-radius: 50%;
+    background-color:#fff;
+}
+.items h1{
+    text-transform: capitalize;
+    font-family: sans-serif;
+    font-size:35px;
+    margin-top: 10px;
+    color: #fff;
+}
+form{
+    position: absolute;
+    right:-10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.input-group {
+    position:relative;
+    top: 10px;
+    margin:20px 0 20px;
+  }
+  .input-group i{
+    position: absolute;
+    top: 13px;
+    left:3px;
+    color: #fff;
+    transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    -webkit-transition: 0.3s ease all;
+  }
+  input {
+    font-size: 16px;
+    padding: 10px 20px 10px 5px;
+    padding-left:30px;
+    display:block;
+    background: none;
+    width:80%;
+    border: none;
+    color: #fff;
+    border-bottom: 3px solid #b388c0;
+  }
+  
+  input:focus {
+    outline: none;
+  }
+  
+  label {
+    color: #fff;
+    font-size: 17px;
+    font-family: sans-serif;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 30px;
+    top: 10px;
+  }
+  input:focus ~ i{
+    top: -20px;
+  }
+
+  input:focus ~ label,
+  input:valid ~ label {
+   display: none;
+  }
+  
+  .bar {
+    position: relative;
+    display:block;
+    width: 315px;
+  }
+  
+  .bar:before,
+  .bar:after {
+    content: '';
+    height: 3px;
+    top: -2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #fff;
+    transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    -webkit-transition: 0.3s ease all;
+  }
+  
+  .bar:before {
+    left: 0;
+  }
+  
+  .bar:after {
+    right: 60px;
+  }
+  
+  input:focus ~ .bar:before,
+  input:focus ~ .bar:after {
+    width: 50%;
+  }
+.rem{
+    position: absolute;
+    display: flex;
+    left: 0;
+    top: 180px;
+    gap:3px;
+ }
+.rem input[type="checkbox"]{
+    position: relative;
+    width: 20px;
+    font-weight: 100;
+}
+.rem p{
+    color: #fff;
+}
+button{
+    position: absolute;
+    bottom: -100px;
+    left: 70px;
+    padding: 10px 35px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-weight: bold;
+    transition: 0.5s;
+}
+button:hover{
+    background:linear-gradient(#ffb26f,#ff285e);
+}
